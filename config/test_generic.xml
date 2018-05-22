@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<proxy>
+	<webcam>	
+	  <port>1234</port>  
+	  <username>none</username>
+	  <password>none</password>
+	  <url>http://216.8.159.21/mjpg/video.mjpg?camera=1</url>	 
+	  <!--<url>http://94.116.56.194/cgi-bin/faststream.jpg</url>--> 
+	</webcam>
+</proxy>

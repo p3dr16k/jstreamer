@@ -1,0 +1,35 @@
+<html>
+<head>
+<script type="text/javascript" src="reload.js"></script>
+<script type="text/javascript">
+var appletCode = '<applet id="cambozola" code="com.charliemouse.cambozola.Viewer" archive="./cambozola.jar" width="640" height="480">' +
+		 '<param name="url" value="http://194.116.73.37:8084" >' +
+		 '<param name="accessories" value="Home,ZoomIn,ZoomOut,Pan,Snapshot">' +
+		 '<param name="accessorystyle" value="always">' +
+		 '<param name="failureimage" value="./csp.png">' +
+		 '</applet>';
+</script>
+<title>I1YRB webcam view</title>
+</head>
+
+
+
+
+<body>
+
+<!--<img src="http://194.116.73.37:8083" />-->
+<div id="applet">
+	<applet id="cambozola" code="com.charliemouse.cambozola.Viewer" archive="./cambozola.jar" width="640" height="480">
+        	<param name="url" value="http://194.116.73.37:8084"/>
+		<param name="accessories" value="Home,ZoomIn,ZoomOut,Pan,Snapshot">
+		<param name="accessorystyle" value="always">
+		<param name="failureimage" value="./csp.png">
+	</applet>
+</div>
+<br/>
+<script type="text/javascript">
+	reloadApplet('cambozola', 'applet', appletCode);
+</script>
+
+</body>
+</html>

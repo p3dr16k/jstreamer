@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<proxy>
+	<webcam>	  
+	  <port>1234</port>
+	  <username>admin</username>
+	  <password>bwebcb99</password>	  
+	  <url>http://94.116.56.194/cgi-bin/faststream.jpg</url>
+	</webcam>
+</proxy>

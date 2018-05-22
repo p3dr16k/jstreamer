@@ -1,0 +1,18 @@
+@startuml
+class com.Ostermiller.util.CircularByteBuffer
+class data.ClientWrapper
+class main.JStreamerMain
+class net.JMobotixWritePool
+class net.JMobotixWriter
+class net.MobotixReader
+class server.JStreamerServer
+main.JStreamerMain ..> server.JStreamerServer
+net.JMobotixWritePool ..> com.Ostermiller.util.CircularByteBuffer
+net.JMobotixWritePool ..> data.ClientWrapper
+net.JMobotixWriter ..> data.ClientWrapper
+net.MobotixReader ..> com.Ostermiller.util.CircularByteBuffer
+server.JStreamerServer ..> com.Ostermiller.util.CircularByteBuffer
+server.JStreamerServer ..> data.ClientWrapper
+server.JStreamerServer ..> net.JMobotixWritePool
+server.JStreamerServer ..> net.MobotixReader
+@enduml
