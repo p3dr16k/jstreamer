@@ -96,7 +96,7 @@ public class JStreamerMain
                 
                 link = JStreamerMain.getTextValue(el, "url");
                 streamerServer = new JStreamerServer(port, username, password, link);
-               // System.out.println("Create " + streamerServer);
+                
                 streamerServer.run();
             }
             catch (ParserConfigurationException ex)

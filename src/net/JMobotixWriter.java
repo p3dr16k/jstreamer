@@ -18,10 +18,10 @@ import java.util.logging.Logger;
  */
 public class JMobotixWriter extends Thread
 {
-    private ClientWrapper client;
+    private final ClientWrapper client;
     private byte[] buffer;
     private boolean flag;
-    private DataOutputStream out;
+    private final DataOutputStream out;
 
     /**
      * Build an instance of JMobotixWriter

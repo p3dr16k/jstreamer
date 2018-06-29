@@ -42,7 +42,7 @@ public class MobotixReader implements Runnable
      * @param password password for autenthication on the cam
      * @param link cam's link address
      */
-    public MobotixReader(String username, String password, String link/*, CircularByteBuffer buffer, int sleep*/)
+    public MobotixReader(String username, String password, String link)
     {
         this.username = username;
         this.password = password;
@@ -52,7 +52,7 @@ public class MobotixReader implements Runnable
 
     /**
      * Set new username
-     * @param username new username
+     * @param u new username
      */
     public void setUsername(String u)
     {
@@ -61,7 +61,7 @@ public class MobotixReader implements Runnable
 
     /**
      * Set new password
-     * @param new password
+     * @param p new password
      */
     public void setPassword(String p)
     {
@@ -70,7 +70,7 @@ public class MobotixReader implements Runnable
 
     /**
      * Set new ip address
-     * @param new ip address
+     * @param link new ip address
      */
     public void setLink(String link)
     {
@@ -78,7 +78,7 @@ public class MobotixReader implements Runnable
     }
 
     /**Set new buffer
-     * @param new buffer
+     * @param b new buffer
      */
     public void setBuffer(CircularByteBuffer b)
     {
@@ -223,7 +223,6 @@ public class MobotixReader implements Runnable
         while(tmp[index] != 0)
             index++;
 
-      //  System.out.println("S... " + s);
         return s.substring(0, index);
     }
 
@@ -232,7 +231,7 @@ public class MobotixReader implements Runnable
      * @param in input stream for data
      * @param dim dim of bytes readed
      */
-    public /*synchronized*/ void readFrame(DataInputStream in, int dim)
+    public void readFrame(DataInputStream in, int dim)
     {       
        try
        {           
@@ -244,11 +243,10 @@ public class MobotixReader implements Runnable
                disconnect();
                System.exit(-3);
            }
-          // byte[] normalized = normalize(new String(b)).getBytes();
+           
            byte[] btmp = new byte[readed];
            System.arraycopy(b, 0, btmp, 0, readed);
-           //--------------------------------------------------
-           //System.out.println("[" + new Date() + "] - " + readed + " Bytes Readed");
+           
            fillBuffer.write(btmp);
            
          
@@ -279,9 +277,7 @@ public class MobotixReader implements Runnable
             connect();
             DataInputStream in = new DataInputStream(inputStream);
             String header = readHeader(in);            
-            int imageLength = Integer.parseInt(header.substring(header.indexOf("Content-Length: ")+16, header.indexOf("Content-Length: ") +21 ).trim());
-           // String subTmp = header.substring(header.indexOf("Content-length: ")+16, header.indexOf("Content-length: ") +21 ).trim();
-            
+            int imageLength = Integer.parseInt(header.substring(header.indexOf("Content-Length: ")+16, header.indexOf("Content-Length: ") +21 ).trim());            
             
             buffer = new CircularByteBuffer(imageLength, true);
             

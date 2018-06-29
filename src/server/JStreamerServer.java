@@ -39,8 +39,8 @@ public class JStreamerServer
         this.username = username;
         this.password = password;
         this.sourceIp = sourceIp;
-        buffer = new CircularByteBuffer(DEFAULT_DIM/*, true*/);
-        reader = new MobotixReader(username, password, sourceIp/*, buffer, sleep*/);
+        buffer = new CircularByteBuffer(DEFAULT_DIM);
+        reader = new MobotixReader(username, password, sourceIp);
         serverSocket = new ServerSocket(port);
         flag = true;
     }
@@ -50,8 +50,8 @@ public class JStreamerServer
         System.out.println(" __________________________________________________");
         System.out.println("|                                                  |");
         System.out.println("|       Proxy for Mobotix Webcam v.0.1(beta)       |");
-        System.out.println("|               Author: Patrick Facco              |");
-        System.out.println("|                     facco@csp.it                 |");
+        System.out.println("|           Author: Patrick Facco                  |");
+        System.out.println("|           faccopatrick@gmail.com                 |");
         System.out.println("|__________________________________________________|");
     }
 
