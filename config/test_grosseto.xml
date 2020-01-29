@@ -4,6 +4,6 @@
 	  <port>1234</port>
 	  <username>admin</username>
 	  <password>bwebcb99</password>	  
-	  <url>http://94.116.56.194/cgi-bin/faststream.jpg</url>
+	  <url>http://194.116.56.194/cgi-bin/faststream.jpg</url>
 	</webcam>
 </proxy>
