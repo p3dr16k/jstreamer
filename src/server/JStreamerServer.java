@@ -49,7 +49,7 @@ public class JStreamerServer
     {
         System.out.println(" __________________________________________________");
         System.out.println("|                                                  |");
-        System.out.println("|       Proxy for Mobotix Webcam v.0.1(beta)       |");
+        System.out.println("|       Proxy for Motion JPEG Webcam v.0.1(beta)   |");
         System.out.println("|           Author: Patrick Facco                  |");
         System.out.println("|           faccopatrick@gmail.com                 |");
         System.out.println("|__________________________________________________|");
